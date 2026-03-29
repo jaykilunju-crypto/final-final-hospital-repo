@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description"
+    content="St. Josephine Mara Hospital - Quality healthcare services in Naivasha, Kenya. 24/7 emergency care, specialized departments, and compassionate medical professionals.">
+  <meta name="keywords"
+    content="hospital Naivasha, healthcare Kenya, medical services, emergency care, St. Josephine Mara">
+  <meta name="author" content="St. Josephine Mara Hospital">
+  <title>St. Josephine Mara Hospital | Naivasha, Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>
+      <span>📍 Nairobi Naivasha Junction, Opposite KWS, Naivasha, Kenya</span>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span>Open 24/7 — Emergency Services Available</span>
+    </div>
+    <div>
+      <span class="emergency">🚨 EMERGENCY: <a href="tel:+254716157825">+254 716 157 825</a></span>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      stjosephinemara@gmail.com
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="logo-wrap" onclick="scrollToHome()">
+        <div class="logo-ring">
+          <div class="logo-ring-inner">
+            <img src="images/A1.jpg" alt="St. Josephine Mara Hospital Logo">
+          </div>
+        </div>
+        <div class="logo-text-block">
+          <div class="logo-name">St. Josephine <span>Mara</span> Hospital</div>
+          <div class="logo-sub">Naivasha, Kenya · Est. 2023</div>
+          <div class="logo-accred">✦ Kenya Medical Board Accredited</div>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <span class="nav-link" onclick="scrollToSection('home')">Home</span>
+        <span class="nav-link" onclick="scrollToSection('about')">About</span>
+        <span class="nav-link" onclick="scrollToSection('services')">Services</span>
+        <span class="nav-link" onclick="scrollToSection('facilities')">Facilities</span>
+        <span class="nav-link" onclick="scrollToSection('contact')">Contact</span>
+      </div>
+
+      <div class="nav-actions" id="navActions">
+        <button class="btn btn-primary" onclick="scrollToSection('appointment')">Book Appointment</button>
+        <button class="btn btn-emergency" onclick="alert('Emergency: +254 716 157 825')">🚨 Emergency</button>
+      </div>
+
+      <button class="hamburger" onclick="openMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="closeMobile()">✕</button>
+    <span class="nav-link" onclick="scrollToSection('home');closeMobile()">Home</span>
+    <span class="nav-link" onclick="scrollToSection('about');closeMobile()">About</span>
+    <span class="nav-link" onclick="scrollToSection('services');closeMobile()">Services</span>
+    <span class="nav-link" onclick="scrollToSection('facilities');closeMobile()">Facilities</span>
+    <span class="nav-link" onclick="scrollToSection('contact');closeMobile()">Contact</span>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;">
+      <button class="btn btn-primary" onclick="scrollToSection('appointment');closeMobile()">Book Appointment</button>
+    </div>
+  </div>
+
+  <main id="publicContent">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge">
+            <span></span> Accepting New Patients — All Departments Open
+          </div>
+          <h1>
+            Compassionate Care,<br>
+            <em>Exceptional</em> Medicine
+          </h1>
+          <p>
+            At St. Josephine Mara Hospital, we combine world-class medical expertise with the warmth of a community
+            hospital — serving patients across the Naivasha region and beyond.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary btn-hero" onclick="scrollToSection('appointment')">
+              📅 Book Appointment
+            </button>
+            <button class="btn btn-outline btn-hero" onclick="scrollToSection('about')">
+              Discover Our Story →
+            </button>
+          </div>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat-card">
+            <div class="num">200+</div>
+            <div class="lbl">Patients Served Annually</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">3+</div>
+            <div class="lbl">Specialist Physicians</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">10+</div>
+            <div class="lbl">Medical Specialties</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">24/7</div>
+            <div class="lbl">Emergency & Trauma Care</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item">
+          <div class="trust-icon">🏥</div>Full-Service Hospital
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🩺</div>Evidence-Based Medicine
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💊</div>On-Site Pharmacy
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🔬</div>Advanced Diagnostics
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🚑</div>Ambulance Services
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💳</div>SHA & Insurance Accepted
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section class="section services-bg" id="services">
+      <div class="section-inner">
+        <div class="reveal" style="text-align:center;margin-bottom:0">
+          <h3><i><marquee>AFFORDABLE PRICINGS & WE ALSO OFFER FREE DOCTOR CONSOLTATIONS EVERY FRIDAY!!!</marquee></i></h3>
+          <div class="section-label">Service Charter</div>
+          <h2 class="section-title">Our <em>Medical Services</em></h2>
+          <p class="section-sub" style="margin:0 auto">At St. Josephine Mara Hospital we offer affordable health
+            services to humanity — a 24-hour Level 4 hospital serving Naivasha and beyond.</p>
+        </div>
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>In &amp; Outpatient</h3>
+            <p>Fully equipped outpatient with a competent team of doctors and nurses responding to emergencies,
+              consultations and general care.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🤰</div>
+            <h3>Maternity</h3>
+            <p>Fully equipped maternity unit with modern equipment, specialist gynaecologist, paediatrician and 24-hour
+              skilled delivery care.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔪</div>
+            <h3>Major &amp; Minor Surgeries</h3>
+            <p>Fully equipped operating theatre with modern machinery for emergency and general surgeries, including
+              specialised procedures.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📡</div>
+            <h3>Ultrasound &amp; X-ray</h3>
+            <p>Modern imaging machines for ultrasound, ECG, ECHO, X-ray and Doppler ultrasound operated by experienced
+              radiologists.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔬</div>
+            <h3>Laboratory Services</h3>
+            <p>24-hour fully equipped laboratory with state-of-the-art equipment and competent personnel to give
+              accurate results at affordable prices.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🩺</div>
+            <h3>Endoscopy &amp; ECG</h3>
+            <p>Advanced endoscopy procedures and ECG diagnostics carried out by our experienced team of specialist
+              consultants.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👶</div>
+            <h3>Antenatal &amp; Postnatal</h3>
+            <p>Comprehensive antenatal care, postnatal follow-up, family planning and immunisation services for mothers
+              and children.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💊</div>
+            <h3>Pharmacy</h3>
+            <p>24-hour pharmacy fully stocked with a wide variety of drugs to respond to all client and patient needs at
+              affordable prices.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Dental &amp; Optical</h3>
+            <p>Dental consultation, treatment, and optical services delivered by qualified professionals in a
+              comfortable clinical setting.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚑</div>
+            <h3>Ambulance Services</h3>
+            <p>Round-the-clock emergency ambulance services ensuring fast, safe patient transport with trained paramedic
+              support.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🧪</div>
+            <h3>Specialized Consultation</h3>
+            <p>Expert specialized consultations across multiple disciplines ensuring patients receive focused,
+              evidence-based specialist care.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💉</div>
+            <h3>Immunization</h3>
+            <p>Full immunization schedules for children and adults, including travel vaccines and national immunization
+              programme services.</p>
+          </div>
+          <!-- New Service Cards -->
+          <div class="service-card">
+            <div class="service-icon">📷</div>
+            <h3>KUB X-ray</h3>
+            <p>We visualize kidneys, ureters, and bladder with precision imaging technology.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🩻</div>
+            <h3>MCU</h3>
+            <p>Micturating Cystourethrogram — we evaluate urethra and bladder function.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔬</div>
+            <h3>HSG</h3>
+            <p>Hysterosalpingogram — we assess uterine cavity and fallopian tubes.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🖥️</div>
+            <h3>Radiology</h3>
+            <p>Branch of medicine using imaging technologies available in our hospital like X-ray, CT, MRI and
+              Ultrasound.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <div class="about-grid reveal">
+          <div class="about-img-stack">
+            <img class="about-img-main" src="images/A6.jpg" alt="Hospital Exterior">
+            <img class="about-img-accent" src="images/A9.jpg" alt="Medical Team">
+            <div class="about-badge">
+              <div class="big">3+</div>
+              <div>
+                <div class="sm" style="font-weight:600;color:var(--navy)">Years of</div>
+                <div class="sm">Excellence</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="section-label">Our Story</div>
+            <h2 class="section-title">A Legacy of <em>Healing</em> in the Heart of Kenya</h2>
+            <p class="section-sub">Founded in 2023 by the Josephine Mara Foundation, our hospital began as a small
+              clinic serving Naivasha's underserved communities. Today we stand as a 10+ bed regional centre, equipped
+              with technologies that rival the finest hospitals in East Africa — yet grounded in the same spirit of
+              compassionate service.</p>
+            <div class="values-list">
+              <div class="value-item">
+                <div class="value-dot">🎯</div>
+                <div>
+                  <h4>Our Vision</h4>
+                  <p>To be East Africa's most trusted healthcare institution, delivering compassionate and innovative
+                    care accessible to all.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-dot">⭐</div>
+                <div>
+                  <h4>Our Mission</h4>
+                  <p>World-class medicine with a personal touch — treating every patient like family while embracing
+                    evidence-based innovation.</p>
+                </div>
+              </div>
+              <div class="value-item">
+                <div class="value-dot">🤝</div>
+                <div>
+                  <h4>Our Values</h4>
+                  <p>Compassion · Integrity · Excellence · Innovation · Respect · Accessibility</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACILITIES SECTION -->
+    <section class="section facilities-bg" id="facilities">
+      <div class="section-inner">
+        <div class="facilities-header reveal">
+          <div>
+            <div class="section-label">World-Class Infrastructure</div>
+            <h2 class="section-title">State-of-the-Art <em>Facilities</em></h2>
+            <p class="section-sub">Our 10+ bed campus houses cutting-edge operating theatres, advanced
+              imaging suites, and thoughtfully designed patient wards.</p>
+          </div>
+          <button class="btn btn-outline-white" onclick="scrollToSection('contact')">Schedule a Tour →</button>
+        </div>
+        <div class="facility-grid reveal">
+          <div class="facility-item" onclick="openLB(0)">
+            <img src="images/A4.jpg" alt="Operational Theatre">
+            <div class="facility-overlay">
+              <h3>Operational Theatre</h3>
+              <p>Modern equipment for major &amp; minor surgeries</p>
+            </div>
+          </div>
+          <div class="facility-item" onclick="openLB(1)">
+            <img src="images/A3.jpg" alt="Hospital Overview">
+            <div class="facility-overlay">
+              <h3>Hospital Overview</h3>
+              <p>Level 4 hospital @ Nairobi Naivasha Junction Opposite KWS, Naivasha</p>
+            </div>
+          </div>
+          <div class="facility-item" onclick="openLB(2)">
+            <img src="images/A5.jpg" alt="Imaging and Maternity">
+            <div class="facility-overlay">
+              <h3>Imaging &amp; Maternity</h3>
+              <p>Ultrasound, ECG, ECHO, X-ray &amp; Maternity care</p>
+            </div>
+          </div>
+          <div class="facility-item" onclick="openLB(3)">
+            <img src="images/A8.jpg" alt="Pharmacy">
+            <div class="facility-overlay">
+              <h3>Pharmacy Services</h3>
+              <p>24-hour pharmacy, fully stocked at affordable prices</p>
+            </div>
+          </div>
+          <div class="facility-item" onclick="openLB(4)">
+            <img src="images/A11.jpg" alt="Hospital Exterior">
+            <div class="facility-overlay">
+              <h3>Hospital Exterior</h3>
+              <p>Modern facility with compassionate care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section testimonials-bg">
+      <div class="section-inner">
+        <div class="reveal" style="text-align:center">
+          <div class="section-label">Patient Voices</div>
+          <h2 class="section-title">What Our <em>Patients</em> Say</h2>
+        </div>
+        <div class="testi-grid reveal">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>"The cardiology team at St. Josephine Mara literally saved my life. The attentiveness, the
+              modern equipment, the calm reassurance — I have never felt so cared for in a medical setting."
+            </blockquote>
+            <div class="testi-author">
+              <div class="testi-avatar">JM</div>
+              <div>
+                <div class="testi-name">James Mwangi</div>
+                <div class="testi-role">Cardiac Patient · Naivasha</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>"I delivered my twins here, and the maternity team was extraordinary. The neonatal team's
+              dedication gave my babies a fighting chance. We are forever grateful."</blockquote>
+            <div class="testi-author">
+              <div class="testi-avatar">AK</div>
+              <div>
+                <div class="testi-name">Amina Kamau</div>
+                <div class="testi-role">Maternity Patient · Gilgil</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>"After my accident, the orthopaedic surgeons here performed a complex reconstruction. Today I am
+              walking pain-free. The physiotherapy programme was equally exceptional."</blockquote>
+            <div class="testi-author">
+              <div class="testi-avatar">PO</div>
+              <div>
+                <div class="testi-name">Peter Otieno</div>
+                <div class="testi-role">Orthopaedic Patient · Nakuru</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPOINTMENT & CONTACT SECTION -->
+    <section class="section appt-section" id="contact">
+      <div class="section-inner">
+        <div class="appt-grid">
+          <div>
+            <div class="section-label">Get in Touch</div>
+            <h2 class="section-title">We're Here for <em>You</em></h2>
+            <p class="section-sub">Book an appointment, speak to our care coordinators, or visit us. Our team is
+              available 24/7 — because your health never takes a day off.</p>
+            <div class="appt-info" style="margin-top:2.5rem">
+              <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <h4>Visit Us</h4>
+                  <p>Nairobi Naivasha Junction, Opposite KWS, Naivasha<br>P.O. Box — 2377, Kenya</p>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <h4>Call Us</h4>
+                  <p>+254 716 157 825 (General)<br>+254 715 157 825 (Emergency)</p>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>stjosephinemara@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appt-form-card reveal" id="appointment">
+            <h3>Book an Appointment</h3>
+            <form id="appointmentForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name *</label>
+                  <input type="text" id="apptFirst" placeholder="John">
+                  <div class="field-error" id="firstName-error"></div>
+                </div>
+                <div class="form-group">
+                  <label>Last Name *</label>
+                  <input type="text" id="apptLast" placeholder="Mwangi">
+                  <div class="field-error" id="lastName-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" id="apptEmail" placeholder="you@example.com">
+                <div class="field-error" id="email-error"></div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="apptPhone" placeholder="0712345678">
+                <div class="field-error" id="phone-error"></div>
+              </div>
+              <div class="form-group">
+                <label>Department *</label>
+                <select id="apptDept">
+                  <option value="">Select Department</option>
+                  <option>In & Outpatient</option>
+                  <option>Maternity</option>
+                  <option>Major & Minor Surgeries</option>
+                  <option>Ultrasound & X-ray</option>
+                  <option>Laboratory Services</option>
+                  <option>Endoscopy & ECG</option>
+                  <option>Antenatal & Postnatal</option>
+                  <option>Pharmacy</option>
+                  <option>Dental & Optical</option>
+                  <option>Ambulance Services</option>
+                  <option>Specialized Consultation</option>
+                  <option>Immunization</option>
+                  <option>KUB X-ray</option>
+                  <option>MCU</option>
+                  <option>HSG</option>
+                  <option>Radiology</option>
+                </select>
+                <div class="field-error" id="department-error"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Preferred Date *</label>
+                  <input type="date" id="apptDate">
+                  <div class="field-error" id="date-error"></div>
+                </div>
+                <div class="form-group">
+                  <label>Preferred Time *</label>
+                  <select id="apptTime">
+                    <option value="">Select Time</option>
+                    <option>8:00 AM</option>
+                    <option>9:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>10:30 AM</option>
+                    <option>11:00 AM</option>
+                    <option>2:00 PM</option>
+                    <option>3:00 PM</option>
+                    <option>4:00 PM</option>
+                  </select>
+                  <div class="field-error" id="time-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Additional Notes (Optional)</label>
+                <textarea id="apptNotes" rows="3" placeholder="Any specific concerns or requests..."></textarea>
+              </div>
+              <button type="submit" id="submitBtn" class="btn btn-primary form-submit">
+                Book Appointment →
+              </button>
+              <p class="form-note">* Required fields. You will receive confirmation via email once your appointment is
+                processed.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER (No fade effect) -->
+    <div class="cta-banner">
+      <div class="cta-inner">
+        <div>
+          <h2>Your Health Is Our Priority.<br>Join 200+ Patients Who Trust Us.</h2>
+          <p>Experience compassionate, world-class healthcare at St. Josephine Mara Hospital.</p>
+        </div>
+        <div class="cta-btns">
+          <button class="btn btn-white btn-hero" onclick="scrollToSection('appointment')">Book Appointment</button>
+          <button class="btn btn-outline-white btn-hero" onclick="scrollToSection('services')">Explore Services</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-ring">
+              <img src="images/A1.jpg" alt="SJMH Logo">
+            </div>
+            <div class="footer-logo-name">
+              St. Josephine <span>Mara</span><br>Hospital
+            </div>
+          </div>
+          <p>Serving the Naivasha community and beyond with compassionate, evidence-based medicine since 2023. Your
+            health is our highest calling.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li onclick="scrollToSection('home')">Home</li>
+            <li onclick="scrollToSection('about')">About Us</li>
+            <li onclick="scrollToSection('services')">Services</li>
+            <li onclick="scrollToSection('facilities')">Facilities</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Departments</h4>
+          <ul>
+            <li>Cardiology</li>
+            <li>Neurology</li>
+            <li>Paediatrics</li>
+            <li>Orthopaedics</li>
+            <li>Maternity</li>
+            <li>Emergency</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact">
+            <div class="footer-contact-item">📍 Nairobi Naivasha Junction, Opposite KWS, Naivasha, Kenya</div>
+            <div class="footer-contact-item">📞 +254 716 157 825</div>
+            <div class="footer-contact-item">✉️ stjosephinemara@gmail.com</div>
+            <div class="footer-contact-item">🚨 Emergency: +254 716 157 825</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 St. Josephine Mara Hospital. All Rights Reserved.</div>
+        <div>
+          <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLB()">
+    <button class="lb-close" onclick="closeLB()">✕</button>
+    <button class="lb-nav lb-prev" onclick="event.stopPropagation();moveLB(-1)">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" onclick="event.stopPropagation();moveLB(1)">›</button>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

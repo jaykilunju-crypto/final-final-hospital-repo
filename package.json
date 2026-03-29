@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "googleapis": "^171.4.0",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^8.0.4"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.11"
+  }
+}

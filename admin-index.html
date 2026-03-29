@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin Console — St. Josephine Mara Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="admin-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sb-brand">
+      <div class="sb-logo">
+        <img src="images/A1.jpg" alt="SJMH Logo">
+      </div>
+      <div>
+        <div class="sb-brand-name">St. Josephine <span>Mara</span></div>
+        <div class="sb-brand-sub">Admin Console</div>
+        <div class="sb-admin-badge">⚡ ADMIN</div>
+      </div>
+    </div>
+
+    <div class="sb-admin-card">
+      <div class="sb-admin-av">SA</div>
+      <div>
+        <div class="sb-admin-name">System Admin</div>
+        <div class="sb-admin-role">Full Access</div>
+      </div>
+      <div class="sb-online"></div>
+    </div>
+
+    <nav class="sb-nav">
+      <div class="sb-section-label">Main</div>
+      <button class="nav-btn active" data-section="appointments">
+        <span class="ni">📅</span> Appointments
+        <span class="nb" id="pendingBadge">0</span>
+      </button>
+      
+      <div class="sb-section-label">Reports</div>
+      <button class="nav-btn" data-section="pdfreports">
+        <span class="ni">📄</span> PDF Reports
+      </button>
+      
+      <div class="sb-section-label">Communications</div>
+      <button class="nav-btn" data-section="emailsettings">
+        <span class="ni">✉️</span> Email Settings
+      </button>
+      
+      <div class="sb-section-label">System</div>
+      <button class="nav-btn" data-section="settings">
+        <span class="ni">⚙️</span> Settings
+      </button>
+    </nav>
+
+    <div class="sb-whatsapp-note">
+      <span class="ni">💬</span> WhatsApp Integration
+      <span class="coming-soon">Coming Soon</span>
+    </div>
+
+    <div class="sb-footer">
+      <button class="sb-logout-btn" id="logoutBtn">
+        <span>🚪</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div class="tb-left">
+        <button class="hamburger-admin" onclick="toggleSidebar()">
+          <span></span><span></span><span></span>
+        </button>
+        <div>
+          <div class="tb-crumb">Admin Console</div>
+          <div class="tb-title" id="pageTitle">Appointments</div>
+        </div>
+      </div>
+      <div class="tb-right">
+        <div class="tb-time" id="currentTime"></div>
+        <div class="status-indicator">
+          <div class="status-dot online" id="statusDot"></div>
+          <span id="statusText">Connected</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-content">
+
+      <!-- APPOINTMENTS SECTION -->
+      <div class="admin-section active" id="section-appointments">
+        <div class="sec-header">
+          <div>
+            <div class="sec-label">Appointment Management</div>
+            <h2 class="sec-title">All <em>Appointments</em></h2>
+            <p class="sec-sub">View and manage patient appointment requests</p>
+          </div>
+          <div class="pending-count-badge" id="pendingCountDisplay">0 Pending</div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="appointmentSearch" placeholder="Search by patient name...">
+          </div>
+          <select id="statusFilter" class="filter-select">
+            <option value="all">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="rescheduled">Rescheduled</option>
+          </select>
+        </div>
+
+        <div class="appointments-grid" id="appointmentsGrid">
+          <!-- Appointment cards will be inserted here -->
+          <div class="empty-state">
+            <div class="empty-icon">📅</div>
+            <p>No appointments yet</p>
+            <small>New appointments will appear here automatically</small>
+          </div>
+        </div>
+
+        <div class="clear-cards-section">
+          <div class="clear-warning">
+            <span class="warning-icon">⚠️</span>
+            <div>
+              <strong>Clear all cards?</strong>
+              <p>Please backup data to avoid loss. This action cannot be undone.</p>
+            </div>
+            <button class="btn btn-outline-danger" id="clearCardsBtn">Clear All Cards</button>
+          </div>
+        </div>
+
+        <div class="hospital-image-note">
+          <img src="images/A11.jpg" alt="St. Josephine Mara Hospital" class="hospital-deco-img">
+        </div>
+      </div>
+
+      <!-- PDF REPORTS SECTION -->
+      <div class="admin-section" id="section-pdfreports">
+        <div class="sec-header">
+          <div>
+            <div class="sec-label">Document Management</div>
+            <h2 class="sec-title">PDF <em>Reports</em></h2>
+            <p class="sec-sub">Generate, view, and manage daily appointment reports</p>
+          </div>
+        </div>
+
+        <div class="pdf-actions">
+          <button class="btn btn-primary" id="generateDailyPDFBtn">
+            📄 Generate Today's PDF
+          </button>
+          <button class="btn btn-outline" id="exportBackupBtn">
+            💾 Export Backup (JSON)
+          </button>
+        </div>
+
+        <div class="saved-reports">
+          <h3>Saved Reports</h3>
+          <div class="reports-list" id="reportsList">
+            <div class="empty-state-small">No saved reports yet</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL SETTINGS SECTION -->
+      <div class="admin-section" id="section-emailsettings">
+        <div class="sec-header">
+          <div>
+            <div class="sec-label">Communication</div>
+            <h2 class="sec-title">Email <em>Settings</em></h2>
+            <p class="sec-sub">Configure email notifications for patient confirmations</p>
+          </div>
+        </div>
+
+        <div class="email-config-card">
+          <h3>SMTP / SendGrid Configuration</h3>
+          <div class="form-group">
+            <label>Email Provider</label>
+            <select id="emailProvider">
+              <option value="sendgrid">SendGrid</option>
+              <option value="smtp">Custom SMTP</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>API Key / Password</label>
+            <input type="password" id="emailApiKey" placeholder="Enter your API key">
+          </div>
+          <div class="form-group">
+            <label>From Email Address</label>
+            <input type="email" id="fromEmail" placeholder="appointments@stjosephinemara.com">
+          </div>
+          <div class="form-group">
+            <label>From Name</label>
+            <input type="text" id="fromName" placeholder="St. Josephine Mara Hospital">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" id="saveEmailSettingsBtn">Save Settings</button>
+            <button class="btn btn-outline" id="testEmailBtn">Send Test Email</button>
+          </div>
+          <div class="email-note">
+            <small>📧 Emails will be sent when you accept or reschedule appointments. Configure your SendGrid account at <a href="https://sendgrid.com" target="_blank">sendgrid.com</a></small>
+          </div>
+        </div>
+
+        <div class="email-logs">
+          <h3>Recent Email Activity</h3>
+          <div class="email-logs-list" id="emailLogs">
+            <div class="empty-state-small">No email activity yet</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS SECTION -->
+      <div class="admin-section" id="section-settings">
+        <div class="sec-header">
+          <div>
+            <div class="sec-label">System</div>
+            <h2 class="sec-title">Account <em>Settings</em></h2>
+            <p class="sec-sub">Manage your admin account preferences</p>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Change Password</h3>
+          <div class="form-group">
+            <label>Current Password</label>
+            <input type="password" id="currentPassword" placeholder="Enter current password">
+          </div>
+          <div class="form-group">
+            <label>New Password</label>
+            <input type="password" id="newPassword" placeholder="Enter new password">
+          </div>
+          <div class="form-group">
+            <label>Confirm New Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm new password">
+          </div>
+          <button class="btn btn-primary" id="changePasswordBtn">Update Password</button>
+        </div>
+
+        <div class="settings-card">
+          <h3>System Preferences</h3>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="soundEnabled" checked>
+              <span>🔊 Play sound on new appointments</span>
+            </label>
+          </div>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="notificationsEnabled" checked>
+              <span>🔔 Show browser notifications</span>
+            </label>
+          </div>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="autoPDFEnabled">
+              <span>📄 Auto-generate PDF at midnight</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>About</h3>
+          <p><strong>St. Josephine Mara Hospital</strong><br>Admin Dashboard v1.0</p>
+          <p>📍 Nairobi Naivasha Junction, Opposite KWS, Naivasha, Kenya<br>📞 +254 716 157 825<br>✉️ stjosephinemara@gmail.com</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="rescheduleModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeRescheduleModal()">✕</button>
+    <div class="modal-title">Reschedule Appointment</div>
+    <div class="modal-sub" id="reschedulePatientName"></div>
+    <div class="form-group">
+      <label>Current Date & Time</label>
+      <input type="text" id="currentDateTime" readonly style="background:#f5f5f5">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>New Date</label>
+        <input type="date" id="newApptDate">
+      </div>
+      <div class="form-group">
+        <label>New Time</label>
+        <select id="newApptTime">
+          <option>8:00 AM</option>
+          <option>9:00 AM</option>
+          <option>10:00 AM</option>
+          <option>10:30 AM</option>
+          <option>11:00 AM</option>
+          <option>2:00 PM</option>
+          <option>3:00 PM</option>
+          <option>4:00 PM</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Reason (optional)</label>
+      <textarea id="rescheduleReason" rows="2" placeholder="Why is this appointment being rescheduled?"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeRescheduleModal()">Cancel</button>
+      <button class="btn btn-primary" id="confirmRescheduleBtn">Confirm Reschedule</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal-box modal-sm">
+    <button class="modal-close" onclick="closeConfirmModal()">✕</button>
+    <div class="modal-title" id="confirmModalTitle">Confirm Action</div>
+    <div class="modal-sub" id="confirmModalMessage">Are you sure you want to proceed?</div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeConfirmModal()">Cancel</button>
+      <button class="btn btn-primary" id="confirmActionBtn">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="admin-app.js"></script>
+</body>
+</html>
