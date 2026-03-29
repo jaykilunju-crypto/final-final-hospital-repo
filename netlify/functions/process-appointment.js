@@ -226,7 +226,7 @@ exports.handler = async (event) => {
                         <div class="content">
                             <p>Dear ${name},</p>
                             <p>Unfortunately, your appointment request for ${new Date(date).toLocaleDateString()} at ${time} could not be accommodated.</p>
-                            <p>Please call us at (XXX) XXX-XXXX to schedule a new appointment.</p>
+                            <p>Please call us at (071) 615-7825 to schedule a new appointment.</p>
                             <p>We apologize for any inconvenience.</p>
                         </div>
                     </div>
