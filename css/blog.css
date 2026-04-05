@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #1a2a3a;
+    background-color: #f0f4f8;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------- HEADER / NAVIGATION ---------- */
+.main-header {
+    background: linear-gradient(135deg, #1a5f7a 0%, #0d445a 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo a:hover {
+    color: #ffd700;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.nav-links a.active {
+    background-color: #ffd700;
+    color: #1a5f7a;
+}
+
+/* ---------- BLOG LISTING PAGE ---------- */
+.blog-header {
+    text-align: center;
+    padding: 50px 0 30px 0;
+    background: linear-gradient(135deg, #e8f0f5 0%, #d4e2ec 100%);
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 40px;
+}
+
+.blog-header h1 {
+    font-size: 2.8rem;
+    color: #1a5f7a;
+    margin-bottom: 15px;
+}
+
+.blog-header p {
+    color: #4a627a;
+    font-size: 1.2rem;
+}
+
+/* Blog post cards */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 5px solid #1a5f7a;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.blog-card h2 {
+    margin-bottom: 12px;
+}
+
+.blog-card h2 a {
+    color: #1a5f7a;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.blog-card h2 a:hover {
+    color: #0d445a;
+    text-decoration: underline;
+}
+
+.blog-meta {
+    color: #8899aa;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-category {
+    background: #e8f0f5;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: #1a5f7a;
+    font-size: 0.8rem;
+}
+
+.blog-excerpt {
+    color: #4a627a;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.read-more {
+    color: #1a5f7a;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-more:hover {
+    color: #0d445a;
+    gap: 10px;
+}
+
+/* ---------- SINGLE BLOG POST PAGE ---------- */
+.post-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 0;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+.post-title {
+    font-size: 2.4rem;
+    color: #1a5f7a;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.post-meta {
+    color: #8899aa;
+    border-bottom: 2px solid #e8f0f5;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2a3a4a;
+}
+
+.post-content h2 {
+    color: #1a5f7a;
+    margin: 35px 0 15px 0;
+    font-size: 1.8rem;
+}
+
+.post-content h3 {
+    color: #2c7a9e;
+    margin: 25px 0 12px 0;
+    font-size: 1.4rem;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content ul, 
+.post-content ol {
+    margin: 20px 0 20px 30px;
+}
+
+.post-content li {
+    margin: 10px 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+.post-content blockquote {
+    background: #e8f0f5;
+    border-left: 4px solid #1a5f7a;
+    padding: 20px 25px;
+    margin: 25px 0;
+    font-style: italic;
+    border-radius: 0 12px 12px 0;
+}
+
+/* Back links */
+.back-links {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid #e8f0f5;
+    display: flex;
+    gap: 30px;
+}
+
+.back-links a {
+    color: #1a5f7a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-links a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- SIDEBAR (Optional) ---------- */
+.blog-sidebar {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.blog-sidebar h3 {
+    color: #1a5f7a;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e8f0f5;
+    padding-bottom: 10px;
+}
+
+.blog-sidebar ul {
+    list-style: none;
+}
+
+.blog-sidebar li {
+    margin: 12px 0;
+}
+
+.blog-sidebar a {
+    color: #4a627a;
+    text-decoration: none;
+}
+
+.blog-sidebar a:hover {
+    color: #1a5f7a;
+}
+
+/* ---------- FOOTER ---------- */
+.main-footer {
+    background: linear-gradient(135deg, #1a2a3a 0%, #0d1a25 100%);
+    color: #aabbcc;
+    text-align: center;
+    padding: 35px 0;
+    margin-top: 60px;
+}
+
+.main-footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+.main-footer p {
+    margin: 8px 0;
+}
+
+/* ---------- RESPONSIVE (Mobile Friendly) ---------- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    
+    .blog-header h1 {
+        font-size: 2rem;
+    }
+    
+    .post-title {
+        font-size: 1.8rem;
+    }
+    
+    .post-container {
+        padding: 25px;
+    }
+    
+    .blog-card {
+        padding: 20px;
+    }
+    
+    .blog-card h2 a {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .post-meta {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+    
+    .back-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
